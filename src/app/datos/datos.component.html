@@ -1,0 +1,21 @@
+<div class="container-fluid marketing" *ngIf="personaje!=null; else espera">
+  <div class="card" style="width: 20rem; ">
+    <img src="{{personaje.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{personaje.name}}</h5>
+      <p class="card-text">Status: {{personaje.status}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Species: {{personaje.species}}</li>
+      <li class="list-group-item">Gender: {{personaje.gender}}</li>
+      <li class="list-group-item">Origin: {{personaje.origin}}</li>
+      <li class="list-group-item">Location: {{personaje.location}}</li>
+    </ul>
+  </div>
+  </div>
+
+<ng-template #espera>
+  <div class="d-flex justify-content-center mt-5">
+      <span class="visually-hidden">Esperando a los datos...</span>
+  </div>
+</ng-template>

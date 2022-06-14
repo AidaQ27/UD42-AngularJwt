@@ -1,0 +1,14 @@
+
+<div *ngIf="personajes!=null; else wait">
+  <div class="card" style="width: 18rem;" *ngFor="let personaje of personajes">
+    <img src="{{personaje.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Personaje:</h5>
+      <p class="card-text">{{personaje.name}}</p>
+      <a href="#" class="btn btn-primary" routerLink="/Datos" (click)="listaService.setPersonaje(personaje.id)">Ver mas</a>
+    </div>
+    </div>
+  </div>
+
+
+<ng-template #wait>Lista vacia...</ng-template>

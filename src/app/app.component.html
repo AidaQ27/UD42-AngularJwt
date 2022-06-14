@@ -1,0 +1,78 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+</script>
+
+<div id="app">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Ricky & Morty</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="d-flex flex-row-reverse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="/mihome">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/personajes">Personajes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/acercade">Acerca de</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/add">Add</a>
+            </li>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-dark" type="submit">Buscar</button>
+            </form>
+
+            <li class="nav-item" *ngIf="showAdminBoard">
+              <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+            </li>
+            <li class="nav-item" *ngIf="showModeratorBoard">
+              <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
+            </li>
+        </ul>
+
+        <ul ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="isLoggedIn">
+          <li class="nav-item">
+            <a href="/registrer" class="nav-link" routerLink="registrer">Registrar</a>
+          </li>
+          <li class="nav-item">
+            <a href="/login" class="nav-link" routerLink="login">Login</a>
+          </li>
+        </ul>
+
+        <ul ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="isLoggedIn">
+          <li class="nav-item">
+            <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+          </li>
+          <li class="nav-item">
+            <a href class="nav-link" (click)="logout()">LogOut</a>
+          </li>
+        </ul>
+
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+

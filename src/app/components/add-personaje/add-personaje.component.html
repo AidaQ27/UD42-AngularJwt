@@ -1,0 +1,47 @@
+
+<div style="width: 500px; margin: auto;">
+  <div class="submit-form">
+      <div *ngIf="!submitted">
+
+          <div class="form-group">
+              <label for="name">Nombre: </label>
+              <input type="text" class="form-control" id="title" required [(ngModel)]="personaje.name" name="name" />
+          </div>
+
+          <div class="form-group">
+            <label for="status">Estado: </label>
+            <input type="text" class="form-control" id="title" required [(ngModel)]="personaje.status" name="status" />
+        </div>
+
+        <div class="form-group">
+          <label for="species">Especie: </label>
+          <input type="text" class="form-control" id="title" required [(ngModel)]="personaje.species" name="species" />
+        </div>
+
+        <div class="form-group">
+            <label for="description">Genero: </label>
+            <input class="form-control" id="description" required [(ngModel)]="personaje.gender" name="genero" />
+        </div>
+
+        <div class="form-group">
+          <label for="origin">Origen: </label>
+          <input class="form-control" id="description" required [(ngModel)]="personaje.origin" name="origen" />
+        </div>
+
+        <div class="form-group">
+          <label for="location">Localización: </label>
+          <input class="form-control" id="description" required [(ngModel)]="personaje.location" name="location" />
+        </div>
+
+
+
+          <button (click)="savePersonaje()" class="btn btn-success" style="margin-top: 50px">Guardar</button>
+      </div>
+
+      <div *ngIf="submitted">
+          <h3>Nuevo personaje añadido</h3>
+          <button class="btn btn-success" (click)="newPersonaje()"> + Añade</button>
+      </div>
+
+  </div>
+</div>
